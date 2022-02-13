@@ -1,6 +1,5 @@
 package ru.simbirSoftTest;
 
-import io.qameta.allure.Step;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,17 +31,8 @@ public class Tests {
 
         calculatorPage.parsingInputExpression("(1 + 2) × 3 - 40 ÷ 5 =");
 
-        checkIntegerOperation(calculatorPage.readTextField(), calculatorPage.readResult());
-
-//        Assert.assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", calculatorPage.readTextField());
-//        Assert.assertEquals("1", calculatorPage.readResult());
-    }
-
-    @Step
-    public static void checkIntegerOperation(String textField, String result)
-    {
-        Assert.assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", textField);
-        Assert.assertEquals("1", result);
+        Assert.assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", calculatorPage.readTextField());
+        Assert.assertEquals("1", calculatorPage.readResult());
     }
 
     @Test
