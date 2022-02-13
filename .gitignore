@@ -174,5 +174,6 @@ buildNumber.properties
 hs_err_pid*
 /.idea/libraries/
 
-#exclude logs
 *.log
+.allure
+.idea
